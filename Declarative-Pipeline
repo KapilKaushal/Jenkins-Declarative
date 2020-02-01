@@ -9,15 +9,10 @@ pipeline{
         PATH = "/opt/maven3/bin:$PATH"
     }
     stages{
-        stage("Git Checkout"){
+        stage("Welcome"){
             steps{
-                git credentialsId: 'github', url: 'https://github.com/javahometech/myweb'
+                echo "Welcome to Jenkins"
             }
         }
-        stage("Maven Build"){
-            steps{
-                sh "mvn clean package"  
-            }
         }
     }
-}
